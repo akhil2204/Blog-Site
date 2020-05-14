@@ -1,0 +1,27 @@
+
+<%- include("../partials/header") %>
+
+
+
+<div class="container">
+<div class="jumbotron text-center">
+	<h1 >
+		Add a Comment on  <%= comment.name%>
+	
+</h1>
+<form action ="/destination/<%=comment._id%>/comments" method="POST">
+
+	   <br>
+	<input type="text" class="btn  btn-lg btn-light w-50 p-2 " name="comm[text]"
+		   placeholder=" You Can Add Comment Here" >
+	<br>
+	<br>
+
+	<br><button class="btn  btn-lg btn-primary">
+	Submit
+	</button>
+</form>
+</div>
+</div>
+
+<%- include("../partials/footer") %>

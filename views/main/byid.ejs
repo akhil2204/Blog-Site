@@ -1,0 +1,109 @@
+<%- include("../partials/header") %>
+
+
+
+
+<div class="container jumbotron  text-center sample">
+	
+
+
+
+<h2>
+		
+	 <%= byid.name%>
+		
+	 </h2>
+	<br>
+	<style >
+		#header{
+			background:url(<%=byid.img%>) center center/ cover no-repeat;
+			width:auto;
+			height:auto;
+		}
+	</style>
+	
+<div id =header class="jumbotron text-center "  >
+<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	</div>
+	<br>
+	<h5>
+		<em>Posted By <strong><%=byid.author.username%></strong></em>
+	</h5>
+	
+
+
+
+	<%if(currentUser&&byid.author.id.equals(currentUser._id))  {                  %>
+	<form style ='float: left;'>
+
+		<a  href="/destination/<%=byid._id%>/edit" class="btn   btn-outline-info mr-3">Edit Blog
+		</a>
+	
+</form>
+	<form  style ='float: left;' class="delete" action ="/destination/<%= byid._id %>?_method=DELETE " method="POST">
+						<button class="btn btn-outline-danger  d-inline ml-3">
+							Delete
+							</button>
+		
+	</form>
+	<%  }%>
+	
+							<div class="clearfix">
+
+							</div>
+	<br>
+	<br>
+							<div class="container ">
+
+
+								<h6><%-byid.desc %></h6>
+							</div>
+	
+	<br>
+
+</div>
+
+
+
+<div class="container jumbotron comment ">
+	<% byid.comments.forEach(function(comment) {%>
+	
+	<p>
+		<strong><%=comment.author.username%></strong>-<%=comment.text%>
+		
+		
+	<%if(currentUser && comment.author.id.equals(currentUser._id))  {                  %>
+	<span class="float-right ">
+   <form style ='float: left;'>
+	<a class="btn btn-sm btn-warning mr-2" href="/destination/<%=byid._id%>/comments/<%=comment._id%>/edit">Edit</a>
+		</form>
+		
+		<form  style ='float: left;'action ="/destination/<%= byid._id%>/comments/<%=comment._id%>?_method=DELETE " method="POST" >
+	<button class="btn btn-sm btn-danger ml-2" href="#">Delete</button>
+			</form>
+		
+	</span>
+		<%} %>
+	</p>
+	<br>
+	<br>
+	<%});%>
+	<div class="clearfix">
+
+							</div>
+		<a  class="btn btn-outline-success"     href="/destination/<%=byid._id%>/comments/new"> Add A New Comment</a>
+	
+</div>
+<%- include("../partials/footer") %>

@@ -1,0 +1,61 @@
+
+<%- include("../partials/header") %>
+
+
+<div class="container">
+<div class="jumbotron">
+	
+
+<h1>
+Travel Destinations for Life time
+	
+</h1>
+<p>
+	Best places to enjoy your vacation 
+	</p>	
+	
+	<a  class="btn btn-primary"href="/destination/new">
+	Enter New Place
+	
+</a>
+</div>
+	
+
+
+
+<br>
+
+<div class = "row " style="display:flex;flex-wrap:wrap;">
+<br>
+
+<% data.forEach(function(place){ %>
+ 
+<div class="col-lg-4 col-md-4 mb-5 col-sm-6">
+<div class="card" style="width:20rem;">
+	
+	<li class="list-group-item "> 
+	
+
+  <img class="card-img-top" src="<%=place.img%>" >
+<br>		
+  
+    <h5>
+		
+	 <%= place.name%>
+		
+	 </h5>
+		<br>
+		<p> <%- place.desc.substring(0,100) %> </p>
+		<br>
+		<a href ="/destination/<%=place._id %>"class="btn btn-info">
+			More Info
+		</a>
+	</li>
+</div>
+	</div>
+<% }); %>
+	
+	</div>
+
+
+<%- include("../partials/footer") %>

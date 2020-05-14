@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>
+		</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+		
+		<style>
+			body{
+				background:url("https://images.pexels.com/photos/965117/pexels-photo-965117.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+				background-size:cover;
+             background-position:center;
+			}
+	       .sample{
+			 background: #FFDEE9;
+background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
+;
+			} 
+			.comment{background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+			} 
+			.h11{
+				font-family:"algerian";
+				opacity: 0.8;
+				font-size:50px;
+				
+			}
+			.h55{
+				font-family:"algerian";
+				opacity: 0.8;
+			}
+			
+			
+			div.cont{
+						 width : 100%;
+						height:290px;
+						 margin :auto;
+							padding:20px;	
+						  border : 5px solid rgba(0, 0, 0,0.3);
+				/* box-shadow: 5px 10px 20px  rgba(234, 237, 240, 0.20); */ box-shadow: 3px 3px 5px 6px #ccc;
+						border-radius: 25px;
+				/* background-color: white; */
+              }
+			
+			
+			
+			#head{
+					opacity: 0.8;
+					}
+
+					.lo{
+					text-align:center;
+					}
+
+		</style>
+		
+		
+	</head>
+	<body>
+		
+		
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFDEE9;
+background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
+
+">
+  <a class="navbar-brand  btn btn-lg btn-outline-info" href="/">Home</a>
+			
+  <a class="navbar-brand  btn btn-lg btn-outline-info" href="/destination">Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+       
+      </li>
+      
+      
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+		
+		<%if(!currentUser){%>
+	  <button class=" btn btn-outline-success mr-4" type="submit"><a  href="/register">Sign UP</a></button>
+		
+      <button class=" btn btn-outline-success mr-4" type="submit"><a  href="/login">Login</a></button>
+		
+		
+		<% } else{ %>
+		<button class="btn btn-outline-light mr-1 " type="submit"><a  href="#">Signed In As <%=currentUser.username
+				%></a></button>
+		
+      <button class="btn btn-outline-success mr-1 " type="submit"><a  href="/logout">Sign OUT</a></button>
+		
+		<%  }  %>
+    </form>
+  </div>
+</nav>
+	<br>
+		<br>
+		
+		
+		
+		

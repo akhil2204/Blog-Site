@@ -1,0 +1,52 @@
+<%- include("../partials/header") %>
+
+
+
+<div class="container">
+<div class="jumbotron text-center sample">
+	<h1 >
+	CREATE A NEW GROUP
+	
+</h1>
+<form action ="/destination/newgroup" >
+<input type="text " class="btn  btn-lg btn-light w-50 p-2 " name="name" 
+	   placeholder="Group Name" >
+	   <br>
+	   <br>
+	
+	
+	  <select class=" btn  btn-light w-50 p-2">
+	
+    <option class="dropdown-item   btn w-50 p-2 " href="#">Choose Category</option>	  
+	 
+    <option class="dropdown-item   btn w-50 p-2 " href="#">Games</option>
+    <option class="dropdown-item btn  w-50 p-2 " href="#">Movies</option>
+    <option class="dropdown-item btn  w-50 p-2 " href="#">Tv-Series</option>
+	<option class="dropdown-item btn w-50 p-2 " href="#">Education</option>
+    <option class="dropdown-item btn  w-50 p-2 " href="#">Socail Network</option>
+    <option class="dropdown-item  btn w-50 p-2 " href="#">Food</option>
+	 <option class="dropdown-item btn  w-50 p-2 " href="#">Travel Destinations</option>
+	  
+	  </select>
+
+	<br>
+	<br>
+	<input type="text" class="btn  btn-lg btn-light w-50 p-2 " name="desc"
+		   placeholder="Add Blog Name" >
+	<br>
+	<br>
+	<input type="text" class="btn  btn-lg btn-light w-50 p-2 " name="desc"
+		   placeholder=" Add Image URL " >
+	<br>
+	<br>
+	<input type="text" class="btn  btn-lg btn-light w-50 p-2 " name="desc"
+		   placeholder=" Descibe Blog" >
+	<br>
+	<br><button class="btn  btn-lg btn-primary">
+	Submit
+	</button>
+</form>
+</div>
+</div>
+
+<%- include("../partials/footer") %>

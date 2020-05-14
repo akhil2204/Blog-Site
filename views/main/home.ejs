@@ -1,0 +1,32 @@
+<%- include("../partials/header") %>
+
+
+
+<div class="container">
+<div class="jumbotron text-center sample">
+	<h1 >
+	Add New BLog
+	
+</h1>
+<form action ="/destination" method="POST">
+	<br>
+<input type="text " class="btn  btn-lg btn-light w-50 p-2 " name="name" 
+	   placeholder="Add Blog Name" >
+	   <br>
+	   <br>
+	<input type="text" class="btn  btn-lg btn-light w-50 p-2 " name="img"
+		   placeholder="Enter image URL" >
+	<br>
+	<br>
+	<textarea type="text" class="btn  btn-lg btn-light w-50 p-2 " name="desc"
+		rows="6" cols="50" placeholder="Describe yourself here..." >
+	</textarea>
+	<br>
+	<br><button class="btn  btn-lg btn-primary">
+	Submit
+	</button>
+</form>
+</div>
+</div>
+
+<%- include("../partials/footer") %>

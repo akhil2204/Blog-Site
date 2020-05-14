@@ -1,0 +1,71 @@
+
+<%- include("../partials/header") %>
+
+
+<div class="container text-center"  >
+<div class="cont">
+	
+<br>
+<h1  class="h11" id="head">
+Blog Site
+	
+</h1>
+	<br>
+	
+<h5 class="h55">
+   A place where you can  Find  People with Similar Interests
+	</h5>	
+	<br>
+	<a  class="btn btn-lg btn-outline-secondary mr-5"href="/destination/new">
+	Enter New Place
+	
+</a> 
+	<a  class="btn btn-lg btn-outline-secondary  ml-5 " href="/destination/newgroup">Add New Group</a>
+	
+</div>
+	
+
+<br>
+
+
+
+<section id= "gallery">
+<div class ="container">
+	
+ <div class="row">
+	 
+	 <br>
+<div class = "row  " style="display:flex;flex-wrap:wrap;">
+<br>
+<% data.forEach(function(place){ %>
+
+	
+<div class="col-lg-4 col-md-6  ">
+<div class="card mb-5" >
+
+  <img class="card-img-top" src="<%=place.img%>" >
+  <div class="card-body">
+    <h5 class="card-title"><%= place.name%></h5>
+    <p class="card-text"><%- place.desc.substring(0,70) %></p>
+    <a class="btn btn-outline-info mr-2 " href="/destination/<%=place._id %>">More Info</a>
+  </div>
+	</div>
+	</div>
+	
+	
+<% }); %>
+
+
+
+	</div>
+	
+		</div>
+	
+	<br>
+	<br>
+	<br>
+	</div>
+</section>
+	
+
+<%- include("../partials/footer") %>

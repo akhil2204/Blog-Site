@@ -1,0 +1,153 @@
+
+
+<html>
+<head>
+<title>BlogSite</title>
+
+<style>
+body{
+background : url("https://images.pexels.com/photos/965117/pexels-photo-965117.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+div.container{
+width : 35%;
+margin : 50px auto;
+border : 5px solid rgba(0, 0, 0, 0.2);
+/* box-shadow: 5px 10px 20px  rgba(234, 237, 240, 0.20); */ box-shadow: 3px 3px 5px 6px #ccc;
+border-radius: 10px;
+/* background-color: white; */
+}
+
+#head{
+opacity: 0.8;
+}
+
+h1{
+text-align:center;
+}
+
+</style>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+	
+	
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFDEE9;
+background-image: linear-gradient(45deg, #FFDEE9 0%, #B5FFFC 100%);
+
+">
+  <a class="navbar-brand  btn btn-lg btn-outline-info" href="/">Home</a>
+			
+  <a class="navbar-brand  btn btn-lg btn-outline-info" href="/destination">Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+       
+      </li>
+      
+      
+      
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+		
+		<%if(!currentUser){%>
+	  <button class=" btn btn-outline-success mr-4" type="submit"><a  href="/register">Sign UP</a></button>
+		
+      <button class=" btn btn-outline-success mr-4" type="submit"><a  href="/login">Login</a></button>
+		
+		
+		<% } else{ %>
+		<button class="btn btn-light mr-1 " type="submit"><a  href="#">Signed In As <%=currentUser.username
+				%></a></button>
+		
+      <button class="btn btn-outline-success mr-1 " type="submit"><a  href="/logout">Sign OUT</a></button>
+		
+		<%  }  %>
+    </form>
+  </div>
+</nav>
+	
+
+<div class = "container">
+<h1 class="mb-4">
+SignUp Form
+</h1>
+<form action="/register" method="post">
+ <div class="container-fluid form-row">
+<div class="form-group col-md-6">
+ <label for="inputfname">First Name</label>
+ <input type="text" class="form-control" id="fname" placeholder="First Name">
+</div>
+<div class="container-fluid form-group col-md-6">
+ <label for="lname">Last Name</label>
+ <input type="text" class="form-control" id="lname" placeholder="Last Name">
+</div>
+ </div>
+
+<div class="container-fluid form-row">
+<div class=" form-group col-md-6">
+ <label for="uname">Username</label>
+ <input type="text" class="form-control" name="username" id="uname" placeholder="Username">
+</div>
+<div class=" form-group col-md-6">
+ <label for="pass">Password</label>
+ <input type="password" class="form-control" name="password"  id="pass" placeholder="Password">
+</div>
+</div>
+
+<div class="container-fluid form-row">
+<div class="form-group col-md-6">
+ <label for=" inputEmail4">Email</label>
+ <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+</div>
+<div class=" form-group col-md-6">
+ <label for="num">Phone Number</label>
+ <input type="number" class="form-control" id="num" placeholder="Phone Number">
+</div>
+</div>
+
+<div class="container-fluid form-row">
+<div class="form-group col-md-6">
+ <label for=" bday">Birthday</label>
+ <input type="date" class="form-control" id="bday" placeholder="Birthday">
+</div>
+<div class=" form-group col-md-6">
+ <p>
+ Gender
+ </p>
+ <div class="form-check form-check-inline">
+ <input class="form-check-input " type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+ <label class="form-check-label" for="inlineRadio1">Male</label>
+</div>
+<div class="form-check form-check-inline">
+ <input class="form-check-input " type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+ <label class="form-check-label" for="inlineRadio2">Female</label>
+</div>
+</div>
+</div>
+ 
+
+<button type="submit" class="btn btn-success btn-block mt-4 mb-4">SignUp</button>
+
+</form>
+</div>
+
+<blockquote class="blockquote text-center">
+ <p class="mb-0">“If you want to be a writer, you must do two things above all: Read a lot and write a lot”</p>
+ <footer class="blockquote-footer"><cite title="Source Title">Stephen King</cite></footer>
+</blockquote>
+
+</body>
+</html>
+
+

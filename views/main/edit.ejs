@@ -1,0 +1,28 @@
+<%- include("../partials/header") %>
+
+
+
+<div class="container">
+<div class="jumbotron text-center sample">
+	<h1 >
+	Enter New Travel Destination
+	
+</h1>
+<form action ="/destination/<%= edit._id %>?_method=PUT" method = "POST">
+<input type="text " class="btn  btn-lg btn-light w-50 p-2 " name="blog[name]"  value="<%=edit.name%>" >
+	   <br>
+	   <br>
+	<input type="text" class="btn  btn-lg btn-light w-50 p-2 " name="blog[img]" value="<%=edit.img%>" >
+	<br>
+	<br>
+	<textarea class="btn  btn-lg btn-light w-75 p-5 " name="blog[desc]"><%=edit.desc%></textarea>
+	
+	<br>
+	<br><button class="btn  btn-lg btn-primary">
+	Submit
+	</button>
+</form>
+</div>
+</div>
+
+<%- include("../partials/footer") %>
